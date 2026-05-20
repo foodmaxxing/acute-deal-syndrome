@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Acute Deal Syndrome Story</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    :root {
+      --cream: #F5EFE0 !important;
+      --dark-brown: #2C1A0E !important;
+      --terracotta: #C1583A !important;
+      --warm-brown: #8B4A2B !important;
+      --light-tan: #E8D5B0 !important;
+      --gold: #C9963A !important;
+    }
+
+    body {
+      background-color: var(--cream) !important;
+      font-family: 'DM Sans', sans-serif !important;
+      color: var(--dark-brown) !important;
+      min-height: 100vh !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    /* Halftone background texture */
+    body::before {
+      content: '' !important;
+      position: fixed !important;
+      inset: 0 !important;
+      background-image: radial-gradient(circle, var(--dark-brown) 0.8px, transparent 0.8px) !important;
+      background-size: 18px 18px !important;
+      opacity: 0.06 !important;
+      pointer-events: none !important;
+      z-index: 0 !important;
+    }
+
+    .wrapper {
+      position: relative !important;
+      z-index: 1 !important;
+      max-width: 780px !important;
+      margin: 0 auto !important;
+      padding: 48px 24px 80px !important;
+    }
+
+    /* Header badge */
+    .badge {
+      display: inline-block !important;
+      background-color: var(--terracotta) !important;
+      color: var(--cream) !important;
+      font-family: 'DM Sans', sans-serif !important;
+      font-size: 11px !important;
+      font-weight: 500 !important;
+      letter-spacing: 3px !important;
+      text-transform: uppercase !important;
+      padding: 6px 16px !important;
+      border-radius: 2px !important;
+      margin-bottom: 24px !important;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif !important;
+      font-size: clamp(36px, 7vw, 64px) !important;
+      font-weight: 700 !important;
+      line-height: 1.08 !important;
+      color: var(--dark-brown) !important;
+      margin-bottom: 8px !important;
+      letter-spacing: -1px !important;
+    }
+
+    h1 em {
+      font-style: italic !important;
+      color: var(--terracotta) !important;
+    }
+
+    .subtitle {
+      font-family: 'Playfair Display', serif !important;
+      font-style: italic !important;
+      font-size: 18px !important;
+      color: var(--warm-brown) !important;
+      margin-bottom: 40px !important;
+      margin-top: 12px !important;
+    }
+
+    /* Decorative rule */
+    .rule {
+      display: flex !important;
+      align-items: center !important;
+      gap: 12px !important;
+      margin-bottom: 40px !important;
+    }
+
+    .rule::before,
+    .rule::after {
+      content: '' !important;
+      flex: 1 !important;
+      height: 2px !important;
+      background: linear-gradient(to right, transparent, var(--terracotta), transparent) !important;
+    }
+
+    .rule-icon {
+      font-size: 20px !important;
+      color: var(--terracotta) !important;
+    }
+
+    /* Hero image placeholder */
+    .hero-image {
+      width: 100% !important;
+      aspect-ratio: 16/9 !important;
+      background-color: var(--light-tan) !important;
+      border: 3px solid var(--dark-brown) !important;
+      border-radius: 4px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      margin-bottom: 48px !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+
+    .hero-image::before {
+      content: '' !important;
+      position: absolute !important;
+      inset: 6px !important;
+      border: 1.5px dashed var(--warm-brown) !important;
+      border-radius: 2px !important;
+      opacity: 0.4 !important;
+    }
+
+    .hero-image-text {
+      font-family: 'Playfair Display', serif !important;
+      font-style: italic !important;
+      font-size: 15px !important;
+      color: var(--warm-brown) !important;
+      text-align: center !important;
+      padding: 0 24px !important;
+      line-height: 1.6 !important;
+    }
+
+    .hero-image-icon {
+      font-size: 48px !important;
+      margin-bottom: 12px !important;
+    }
+
+    /* Article body */
+    .article-body {
+      margin-bottom: 48px !important;
+    }
+
+    .article-body p {
+      font-size: 17px !important;
+      line-height: 1.85 !important;
+      color: var(--dark-brown) !important;
+      margin-bottom: 24px !important;
+    }
+
+    .article-body p:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    /* Pull quote */
+    .pull-quote {
+      border-left: 4px solid var(--terracotta) !important;
+      padding: 20px 28px !important;
+      margin: 40px 0 !important;
+      background-color: var(--light-tan) !important;
+      border-radius: 0 4px 4px 0 !important;
+    }
+
+    .pull-quote p {
+      font-family: 'Playfair Display', serif !important;
+      font-style: italic !important;
+      font-size: 22px !important;
+      line-height: 1.5 !important;
+      color: var(--dark-brown) !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* Progress section */
+    .progress-box {
+      background-color: var(--dark-brown) !important;
+      color: var(--cream) !important;
+      border-radius: 6px !important;
+      padding: 32px !important;
+      margin: 40px 0 !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+
+    .progress-box::before {
+      content: '' !important;
+      position: absolute !important;
+      inset: 0 !important;
+      background-image: radial-gradient(circle, var(--cream) 0.6px, transparent 0.6px) !important;
+      background-size: 14px 14px !important;
+      opacity: 0.05 !important;
+    }
+
+    .progress-box h3 {
+      font-family: 'Playfair Display', serif !important;
+      font-size: 22px !important;
+      font-weight: 700 !important;
+      color: var(--gold) !important;
+      margin-bottom: 20px !important;
+      position: relative !important;
+      z-index: 1 !important;
+    }
+
+    .progress-bar-wrapper {
+      position: relative !important;
+      z-index: 1 !important;
+      margin-bottom: 16px !important;
+    }
+
+    .progress-label {
+      display: flex !important;
+      justify-content: space-between !important;
+      font-size: 13px !important;
+      color: var(--light-tan) !important;
+      margin-bottom: 8px !important;
+      letter-spacing: 0.5px !important;
+    }
+
+    .progress-bar-bg {
+      width: 100% !important;
+      height: 12px !important;
+      background-color: rgba(255,255,255,0.1) !important;
+      border-radius: 6px !important;
+      overflow: hidden !important;
+    }
+
+    .progress-bar-fill {
+      height: 100% !important;
+      background: linear-gradient(to right, var(--terracotta), var(--gold)) !important;
+      border-radius: 6px !important;
+      width: 0% !important;
+      transition: width 1.5s ease !important;
+    }
+
+    .progress-note {
+      font-size: 13px !important;
+      color: var(--light-tan) !important;
+      font-style: italic !important;
+      position: relative !important;
+      z-index: 1 !important;
+      margin-top: 16px !important;
+    }
+
+    /* Section heading */
+    h2 {
+      font-family: 'Playfair Display', serif !important;
+      font-size: 28px !important;
+      font-weight: 700 !important;
+      color: var(--dark-brown) !important;
+      margin-bottom: 20px !important;
+      margin-top: 48px !important;
+      line-height: 1.2 !important;
+    }
+
+    /* CTA section */
+    .cta-section {
+      background-color: var(--terracotta) !important;
+      border-radius: 6px !important;
+      padding: 40px 32px !important;
+      text-align: center !important;
+      margin-top: 56px !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+
+    .cta-section::before {
+      content: '' !important;
+      position: absolute !important;
+      inset: 0 !important;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px) !important;
+      background-size: 20px 20px !important;
+    }
+
+    .cta-section h3 {
+      font-family: 'Playfair Display', serif !important;
+      font-size: 28px !important;
+      font-weight: 700 !important;
+      color: var(--cream) !important;
+      margin-bottom: 12px !important;
+      position: relative !important;
+      z-index: 1 !important;
+    }
+
+    .cta-section p {
+      font-size: 16px !important;
+      color: rgba(245, 239, 224, 0.9) !important;
+      margin-bottom: 28px !important;
+      position: relative !important;
+      z-index: 1 !important;
+      line-height: 1.6 !important;
+    }
+
+    .cta-button {
+      display: inline-block !important;
+      background-color: var(--cream) !important;
+      color: var(--terracotta) !important;
+      font-family: 'DM Sans', sans-serif !important;
+      font-weight: 500 !important;
+      font-size: 15px !important;
+      letter-spacing: 1px !important;
+      text-transform: uppercase !important;
+      text-decoration: none !important;
+      padding: 14px 32px !important;
+      border-radius: 3px !important;
+      position: relative !important;
+      z-index: 1 !important;
+      transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2) !important;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25) !important;
+    }
+
+    /* Affiliate disclosure */
+    .disclosure {
+      margin-top: 48px !important;
+      padding: 20px !important;
+      border: 1px solid var(--light-tan) !important;
+      border-radius: 4px !important;
+      font-size: 13px !important;
+      color: var(--warm-brown) !important;
+      line-height: 1.7 !important;
+      font-style: italic !important;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center !important;
+      margin-top: 48px !important;
+      padding-top: 32px !important;
+      border-top: 2px solid var(--light-tan) !important;
+    }
+
+    .footer p {
+      font-size: 13px !important;
+      color: var(--warm-brown) !important;
+      letter-spacing: 1px !important;
+      text-transform: uppercase !important;
+    }
+
+    /* Animate progress bar on load */
+    @keyframes fillBar {
+      from { width: 0% !important; }
+      to { width: 30% !important; }
+    }
+
+    .progress-bar-fill.animate {
+      animation: fillBar 1.5s ease forwards !important;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper {
+        padding: 32px 16px 60px !important;
+      }
+      .progress-box {
+        padding: 24px !important;
+      }
+      .cta-section {
+        padding: 32px 20px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <div class="badge">🛒 The ADS Story</div>
+
+    <h1>I Built a Deal Channel.<br>Amazon Said <em>Not Yet.</em></h1>
+    <p class="subtitle">The honest story of building Acute Deal Syndrome from scratch — one manual post at a time.</p>
+
+    <div class="rule"><span class="rule-icon">✦</span></div>
+
+    <!-- Hero image placeholder -->
+    <div class="hero-image">
+      <div class="hero-image-icon">🩺</div>
+      <p class="hero-image-text">[ Insert ADS profile image here — the diagnosis scene ]</p>
+    </div>
+
+    <!-- Article body -->
+    <div class="article-body">
+
+      <p>A few weeks ago I had an idea. What if I built a Telegram channel that automatically finds and posts the best deals on Amazon and Walmart — all day, every day — without me having to lift a finger once it was set up?</p>
+
+      <p>The concept was simple. A Python bot. A couple of APIs. A channel with a funny name. Deals flowing in automatically. Affiliate commissions building quietly in the background while I went about my day.</p>
+
+      <p>I even had the name figured out: <strong>Acute Deal Syndrome</strong>. Because let's be honest — if you're the kind of person who gets excited when a delivery truck turns onto your street, you already have it.</p>
+
+      <div class="pull-quote">
+        <p>"The bot was planned. The brand was built. The profile picture was perfect. Then Amazon said: not so fast."</p>
+      </div>
+
+      <h2>The Part Nobody Talks About</h2>
+
+      <p>To run an automated deal bot you need access to Amazon's Product Advertising API. And to get that access, Amazon requires you to have already made qualifying sales through their affiliate program. It's a classic chicken-and-egg problem — you need the API to scale, but you need sales to get the API.</p>
+
+      <p>I applied. Got rejected. Applied again. Rejected again. Applied a third time. You can probably guess what happened.</p>
+
+      <p>So here I am — doing it the old fashioned way. Manually finding deals. Manually posting them. One by one. Trying to hit 10 qualifying sales so Amazon will finally say yes and let me build the thing I've been planning for months.</p>
+
+      <h2>Why I'm Still Here</h2>
+
+      <p>Because the idea is solid. Because the channel is real. Because every deal I post manually is one step closer to the bot taking over and doing it automatically at scale. And because honestly — the deals I'm finding are genuinely good, and people deserve to know about them.</p>
+
+      <p>Acute Deal Syndrome is a Telegram channel where I post the best deals I find on Amazon and Walmart. Right now it's me, manually, every day. Soon it'll be a bot doing it around the clock across multiple channels. But the deals are real either way.</p>
+
+      <div class="pull-quote">
+        <p>"10 sales. That's all I need. Then the bot takes over and ADS becomes what it was always meant to be."</p>
+      </div>
+
+      <h2>Where Things Stand</h2>
+
+    </div>
+
+    <!-- Progress box -->
+    <div class="progress-box">
+      <h3>🎯 Mission: 10 Qualifying Sales</h3>
+      <div class="progress-bar-wrapper">
+        <div class="progress-label">
+          <span>Qualifying Sales</span>
+          <span>Goal: 10</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill animate" id="progressBar"></div>
+        </div>
+      </div>
+      <p class="progress-note">* Progress updates as sales come in. Every click on a deal link helps get us there.</p>
+    </div>
+
+    <div class="article-body">
+
+      <h2>What Happens When We Get There</h2>
+
+      <p>The bot goes live. Deals start posting automatically across the ADS channel and the ADS: Haul channel — which is dedicated entirely to Amazon Haul finds under $20. The kind of things you didn't know you needed until you see them at $6.99.</p>
+
+      <p>The bot will be smart about it too — boosting the right categories around holidays, hunting for glitches and clearance deals, posting digests of the best live deals every few hours so nobody misses anything good.</p>
+
+      <p>But none of that happens until those 10 sales do. So if you've ever found a deal on this channel that made you smile — this is how you help build what comes next.</p>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <h3>🔥 Join Acute Deal Syndrome</h3>
+      <p>Free deals every day on Amazon and Walmart. No spam. No nonsense. Just genuinely good finds posted by a real person who is very much addicted to a good deal.</p>
+      <a class="cta-button" href="https://t.me/AcuteDealSyndrome" target="_blank" rel="noopener">Join The Channel →</a>
+    </div>
+
+    <!-- Disclosure -->
+    <div class="disclosure">
+      <strong>Affiliate Disclosure:</strong> As an Amazon Associate and Walmart affiliate, I earn from qualifying purchases made through links on this page and in the ADS Telegram channel. This costs you nothing extra — and every purchase helps keep the deals coming. Thank you genuinely.
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>Acute Deal Syndrome &mdash; Because the deals chose you 🛒</p>
+    </div>
+
+  </div>
+
+  <script>
+    // Animate progress bar on page load
+    window.addEventListener('load', function() {
+      var bar = document.getElementById('progressBar');
+      if (bar) {
+        setTimeout(function() {
+          bar.style.width = '30%';
+        }, 300);
+      }
+    });
+  </script>
+</body>
+</html>
